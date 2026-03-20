@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/iam-Nitharshana/Trend-Project2.git'
-            }
-        }
+    
 
         stage('Build Docker Image') {
             steps {
