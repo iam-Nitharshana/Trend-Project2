@@ -20,12 +20,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS']]) {     
+                    
                 sh 'aws eks --region ap-south-1 update-kubeconfig --name trend-cluster'
                 sh 'kubectl apply -f deployment.yml --validate=false'
                 sh 'kubectl apply -f service.yml'
                     }
-                }
+                
             }
         }
     }
