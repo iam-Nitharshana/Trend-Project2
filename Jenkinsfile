@@ -12,7 +12,7 @@ pipeline {
          
         stage('Push to DockerHub') {
             steps {
-                sh 'docker login -u nitharshana9490 -p $password
+                sh 'docker login -u nitharshana9490 -p $password'
                 sh 'docker push nitharshana9490/trend-app1'
             }
         }
